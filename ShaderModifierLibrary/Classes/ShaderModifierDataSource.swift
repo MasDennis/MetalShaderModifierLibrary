@@ -35,14 +35,28 @@ class ShaderModifierDataSource {
     private func populateArray() {
         shaderModifiers.append(
             ShaderModifierEntity(
-                name: "Circle",
+                name: "Cube",
                 previewImage: image(named: "icon_circle"),
                 shaderModifier: shaderModifier(named: "circle"),
                 entryPoint: .fragment,
-                targetMeshType: .quad))
+                targetMeshType: .cube))
         shaderModifiers.append(
             ShaderModifierEntity(
-                name: "Circle 2",
+                name: "Sphere",
+                previewImage: image(named: "icon_circle"),
+                shaderModifier: shaderModifier(named: "circle"),
+                entryPoint: .fragment,
+                targetMeshType: .sphere))
+        shaderModifiers.append(
+            ShaderModifierEntity(
+                name: "Suzanne",
+                previewImage: image(named: "icon_circle"),
+                shaderModifier: shaderModifier(named: "circle"),
+                entryPoint: .fragment,
+                targetMeshType: .suzanne))
+        shaderModifiers.append(
+            ShaderModifierEntity(
+                name: "Quad",
                 previewImage: image(named: "icon_circle"),
                 shaderModifier: shaderModifier(named: "circle"),
                 entryPoint: .fragment,

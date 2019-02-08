@@ -11,7 +11,6 @@
 		95F246622202349900E7C2E7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F246612202349900E7C2E7 /* art.scnassets */; };
 		95F246642202349900E7C2E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F246632202349900E7C2E7 /* GameViewController.swift */; };
 		95F246672202349900E7C2E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F246652202349900E7C2E7 /* Main.storyboard */; };
-		95F246692202349A00E7C2E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F246682202349A00E7C2E7 /* Assets.xcassets */; };
 		95F2466C2202349A00E7C2E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F2466A2202349A00E7C2E7 /* LaunchScreen.storyboard */; };
 		95F246742202384000E7C2E7 /* ShaderModifierCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F246732202384000E7C2E7 /* ShaderModifierCollectionView.swift */; };
 		95F2467722023B3E00E7C2E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467622023B3E00E7C2E7 /* Default-568h@2x.png */; };
@@ -19,6 +18,7 @@
 		95F2467C22023D1200E7C2E7 /* icon_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467B22023D1200E7C2E7 /* icon_circle.png */; };
 		95F2467F22023FFB00E7C2E7 /* circle.shader in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467E22023FFB00E7C2E7 /* circle.shader */; };
 		95F24681220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */; };
+		EF2CA191220D3F7B0076E31F /* ShaderModifierSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,6 @@
 		95F246612202349900E7C2E7 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		95F246632202349900E7C2E7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		95F246662202349900E7C2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		95F246682202349A00E7C2E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95F2466B2202349A00E7C2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95F2466D2202349A00E7C2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F246732202384000E7C2E7 /* ShaderModifierCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierCollectionView.swift; sourceTree = "<group>"; };
@@ -36,6 +35,8 @@
 		95F2467B22023D1200E7C2E7 /* icon_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_circle.png; sourceTree = "<group>"; };
 		95F2467E22023FFB00E7C2E7 /* circle.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = circle.shader; sourceTree = "<group>"; };
 		95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierCollectionViewCell.swift; sourceTree = "<group>"; };
+		EF2CA18D220D3B1B0076E31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierSwitcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,18 +70,13 @@
 		95F2465E2202349900E7C2E7 /* ShaderModifierLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				95F2467D22023D2100E7C2E7 /* Shader Modifiers */,
-				95F2467A22023D0500E7C2E7 /* Resources */,
-				95F2465F2202349900E7C2E7 /* AppDelegate.swift */,
+				EF2CA18D220D3B1B0076E31F /* Assets.xcassets */,
 				95F246612202349900E7C2E7 /* art.scnassets */,
-				95F246632202349900E7C2E7 /* GameViewController.swift */,
-				95F246652202349900E7C2E7 /* Main.storyboard */,
-				95F246682202349A00E7C2E7 /* Assets.xcassets */,
-				95F2466A2202349A00E7C2E7 /* LaunchScreen.storyboard */,
+				EF2CA18B220D3AD80076E31F /* Classes */,
+				95F2467A22023D0500E7C2E7 /* Resources */,
+				95F2467D22023D2100E7C2E7 /* Shader Modifiers */,
+				EF2CA18C220D3B030076E31F /* Storyboard */,
 				95F2466D2202349A00E7C2E7 /* Info.plist */,
-				95F246732202384000E7C2E7 /* ShaderModifierCollectionView.swift */,
-				95F2467822023BDC00E7C2E7 /* ShaderModifierDataSource.swift */,
-				95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */,
 			);
 			path = ShaderModifierLibrary;
 			sourceTree = "<group>";
@@ -99,6 +95,28 @@
 				95F2467E22023FFB00E7C2E7 /* circle.shader */,
 			);
 			path = "Shader Modifiers";
+			sourceTree = "<group>";
+		};
+		EF2CA18B220D3AD80076E31F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				95F2465F2202349900E7C2E7 /* AppDelegate.swift */,
+				95F246632202349900E7C2E7 /* GameViewController.swift */,
+				95F246732202384000E7C2E7 /* ShaderModifierCollectionView.swift */,
+				95F2467822023BDC00E7C2E7 /* ShaderModifierDataSource.swift */,
+				95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */,
+				EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EF2CA18C220D3B030076E31F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				95F246652202349900E7C2E7 /* Main.storyboard */,
+				95F2466A2202349A00E7C2E7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +181,6 @@
 				95F2466C2202349A00E7C2E7 /* LaunchScreen.storyboard in Resources */,
 				95F2467F22023FFB00E7C2E7 /* circle.shader in Resources */,
 				95F2467C22023D1200E7C2E7 /* icon_circle.png in Resources */,
-				95F246692202349A00E7C2E7 /* Assets.xcassets in Resources */,
 				95F2467722023B3E00E7C2E7 /* Default-568h@2x.png in Resources */,
 				95F246672202349900E7C2E7 /* Main.storyboard in Resources */,
 			);
@@ -176,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2CA191220D3F7B0076E31F /* ShaderModifierSwitcher.swift in Sources */,
 				95F24681220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift in Sources */,
 				95F246742202384000E7C2E7 /* ShaderModifierCollectionView.swift in Sources */,
 				95F246642202349900E7C2E7 /* GameViewController.swift in Sources */,

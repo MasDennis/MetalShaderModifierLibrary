@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol ShaderModifierSelectionDelegate {
+    func didSelect(shaderModifier: ShaderModifierEntity)
+}
+
 class ShaderModifierCollectionView: UICollectionView {
     var shaderDataSource: ShaderModifierDataSource? {
         didSet {
             reloadData()
         }
     }
+    var selectionDelegate: ShaderModifierSelectionDelegate?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -42,6 +47,7 @@ extension ShaderModifierCollectionView: UICollectionViewDataSource {
         if let cell = cell as? ShaderModifierCollectionViewCell,
             let shaderModifierEntry = shaderDataSource?.shaderModifiers[indexPath.row] {
             cell.imageView.image = shaderModifierEntry.previewImage
+            cell.titleLabel.text = shaderModifierEntry.name
         }
         
         return cell
@@ -50,5 +56,7 @@ extension ShaderModifierCollectionView: UICollectionViewDataSource {
 
 extension ShaderModifierCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let shaderModifierEntry = shaderDataSource?.shaderModifiers[indexPath.row] else { return }
+        selectionDelegate?.didSelect(shaderModifier: shaderModifierEntry)
     }
 }

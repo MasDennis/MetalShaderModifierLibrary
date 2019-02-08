@@ -27,34 +27,59 @@
                                     <constraint firstAttribute="height" constant="100" id="LFG-av-U4X"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U2t-tv-Tbg">
-                                    <size key="itemSize" width="76" height="72"/>
+                                    <size key="itemSize" width="76" height="96"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shaderModifierCell" id="ZFA-R6-Rh6" customClass="ShaderModifierCollectionViewCell" customModule="ShaderModifierLibrary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="14" width="76" height="72"/>
+                                        <rect key="frame" x="0.0" y="2" width="76" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="76" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="76" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6g-bl-Elg" userLabel="ContentView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="76" height="72"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6g-bl-Elg" userLabel="ContentView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="76" height="96"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="60X-p2-u3e">
-                                                            <rect key="frame" x="0.0" y="0.0" width="76" height="72"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60X-p2-u3e">
+                                                            <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="76" id="qnA-Uh-RUR"/>
+                                                            </constraints>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJv-J8-7Jv">
+                                                            <rect key="frame" x="0.0" y="79" width="76" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <size key="shadowOffset" width="1" height="1"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="tJv-J8-7Jv" firstAttribute="leading" secondItem="G6g-bl-Elg" secondAttribute="leading" id="5Ma-eM-Dl8"/>
+                                                        <constraint firstItem="60X-p2-u3e" firstAttribute="top" secondItem="G6g-bl-Elg" secondAttribute="top" id="OjF-jl-a30"/>
+                                                        <constraint firstAttribute="height" constant="96" id="QrJ-2h-bAR"/>
+                                                        <constraint firstItem="tJv-J8-7Jv" firstAttribute="width" secondItem="G6g-bl-Elg" secondAttribute="width" id="SkN-GP-mkz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tJv-J8-7Jv" secondAttribute="trailing" id="ejN-Ed-Idz"/>
+                                                        <constraint firstAttribute="width" constant="76" id="euY-2D-0fw"/>
+                                                        <constraint firstAttribute="bottom" secondItem="tJv-J8-7Jv" secondAttribute="bottom" id="gGL-mi-hzg"/>
+                                                        <constraint firstItem="60X-p2-u3e" firstAttribute="leading" secondItem="G6g-bl-Elg" secondAttribute="leading" id="l6J-DV-IIu"/>
+                                                        <constraint firstItem="60X-p2-u3e" firstAttribute="width" secondItem="G6g-bl-Elg" secondAttribute="width" id="vRo-It-WCd"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="G6g-bl-Elg" firstAttribute="top" secondItem="ZFA-R6-Rh6" secondAttribute="top" id="5rZ-kJ-6Zv"/>
+                                            <constraint firstItem="G6g-bl-Elg" firstAttribute="leading" secondItem="ZFA-R6-Rh6" secondAttribute="leading" id="RdY-vz-yax"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="60X-p2-u3e" id="Y1L-39-KzF"/>
+                                            <outlet property="titleLabel" destination="tJv-J8-7Jv" id="hww-Or-K5N"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
