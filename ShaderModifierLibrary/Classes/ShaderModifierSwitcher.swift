@@ -60,20 +60,28 @@ class ShaderModifierSwitcher {
         let node = SCNNode()
         let material = SCNMaterial()
 
-        material.shaderModifiers = [
-            SCNShaderModifierEntryPoint.geometry:
-            "#pragma arguments\n" +
-            "vec2 sincos(float t) { return vec2(sin(t), cos(t)); }\n" +
-            "#pragma body\n" +
-            "_geometry.position.xy = sincos(u_time) * 6.0;",
-            SCNShaderModifierEntryPoint.fragment:
-            "_output.color = vec4(0.0, 1.0, 0.0, 1.0);"
-            ]
+        material.diffuse.contents = UIImage(named: "uv_grid.jpg", in: Bundle.main, compatibleWith: nil)
         
-        material.diffuse.contents = UIColor.red
+        if let shaderModifier = currentShaderModifier {
+            material.shaderModifiers = [ shaderModifier.entryPoint: shaderModifier.shaderModifier ]
+        }
+        
         node.geometry = SCNPlane(width: 1, height: 1)
         node.geometry?.firstMaterial = material
         sceneView?.scene?.rootNode.addChildNode(node)
         currentNode = node
+        
+        guard let orthoScale = sceneView?.pointOfView?.camera?.orthographicScale,
+            let viewSize = sceneView?.frame.size
+            else {
+                return
+        }
+        
+        var scale = SCNVector3()
+        scale.x = Float(orthoScale) * 2.0 * Float(viewSize.width / viewSize.height)
+        scale.y = Float(orthoScale) * 2.0
+        scale.z = 1
+        
+        node.scale = scale
     }
 }

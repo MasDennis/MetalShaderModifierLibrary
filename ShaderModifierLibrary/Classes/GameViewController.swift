@@ -16,6 +16,8 @@ class GameViewController: UIViewController {
     
     private var dataSource: ShaderModifierDataSource?
     private var switcher: ShaderModifierSwitcher?
+    private var perspectiveCameraNode: SCNNode?
+    private var orthographicCameraNode: SCNNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class GameViewController: UIViewController {
         
         sceneView.allowsCameraControl = true
         sceneView.backgroundColor = UIColor.black
+        sceneView.rendersContinuously = true
         
         let scene = SCNScene()
         sceneView.scene = scene
@@ -31,11 +34,21 @@ class GameViewController: UIViewController {
         let cameraLookAtNode = SCNNode()
         scene.rootNode.addChildNode(cameraLookAtNode)
         
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(-3, 3, 3)
-        cameraNode.constraints = [ SCNLookAtConstraint(target: cameraLookAtNode) ]
-        scene.rootNode.addChildNode(cameraNode)
+        let perspectiveCameraNode = SCNNode()
+        perspectiveCameraNode.camera = SCNCamera()
+        perspectiveCameraNode.position = SCNVector3(-3, 3, 3)
+        perspectiveCameraNode.constraints = [ SCNLookAtConstraint(target: cameraLookAtNode) ]
+        scene.rootNode.addChildNode(perspectiveCameraNode)
+        self.perspectiveCameraNode = perspectiveCameraNode
+        
+        let orthographicCameraNode = SCNNode()
+        orthographicCameraNode.camera = SCNCamera()
+        orthographicCameraNode.camera?.usesOrthographicProjection = true
+        orthographicCameraNode.position = SCNVector3(0, 0, 1)
+        scene.rootNode.addChildNode(orthographicCameraNode)
+        self.orthographicCameraNode = orthographicCameraNode
+        
+        sceneView.pointOfView = perspectiveCameraNode
         
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
@@ -82,5 +95,14 @@ class GameViewController: UIViewController {
 extension GameViewController: ShaderModifierSelectionDelegate {
     func didSelect(shaderModifier: ShaderModifierEntity) {
         switcher?.switchTo(shaderModifier: shaderModifier)
+        
+        switch shaderModifier.targetMeshType {
+        case .quad:
+            sceneView.pointOfView = orthographicCameraNode
+            sceneView.allowsCameraControl = false
+        default:
+            sceneView.pointOfView = perspectiveCameraNode
+            sceneView.allowsCameraControl = true
+        }
     }
 }

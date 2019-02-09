@@ -16,9 +16,10 @@
 		95F2467722023B3E00E7C2E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467622023B3E00E7C2E7 /* Default-568h@2x.png */; };
 		95F2467922023BDC00E7C2E7 /* ShaderModifierDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2467822023BDC00E7C2E7 /* ShaderModifierDataSource.swift */; };
 		95F2467C22023D1200E7C2E7 /* icon_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467B22023D1200E7C2E7 /* icon_circle.png */; };
-		95F2467F22023FFB00E7C2E7 /* circle.shader in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467E22023FFB00E7C2E7 /* circle.shader */; };
+		95F2467F22023FFB00E7C2E7 /* circle.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467E22023FFB00E7C2E7 /* circle.fragment.shader */; };
 		95F24681220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */; };
 		EF2CA191220D3F7B0076E31F /* ShaderModifierSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */; };
+		EF6D2072220E99E2002DDDD5 /* uv_grid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,10 +34,11 @@
 		95F2467622023B3E00E7C2E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		95F2467822023BDC00E7C2E7 /* ShaderModifierDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierDataSource.swift; sourceTree = "<group>"; };
 		95F2467B22023D1200E7C2E7 /* icon_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_circle.png; sourceTree = "<group>"; };
-		95F2467E22023FFB00E7C2E7 /* circle.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = circle.shader; sourceTree = "<group>"; };
+		95F2467E22023FFB00E7C2E7 /* circle.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = circle.fragment.shader; sourceTree = "<group>"; };
 		95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF2CA18D220D3B1B0076E31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierSwitcher.swift; sourceTree = "<group>"; };
+		EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uv_grid.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		95F2465E2202349900E7C2E7 /* ShaderModifierLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */,
 				EF2CA18D220D3B1B0076E31F /* Assets.xcassets */,
 				95F246612202349900E7C2E7 /* art.scnassets */,
 				EF2CA18B220D3AD80076E31F /* Classes */,
@@ -92,7 +95,7 @@
 		95F2467D22023D2100E7C2E7 /* Shader Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				95F2467E22023FFB00E7C2E7 /* circle.shader */,
+				95F2467E22023FFB00E7C2E7 /* circle.fragment.shader */,
 			);
 			path = "Shader Modifiers";
 			sourceTree = "<group>";
@@ -177,9 +180,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF6D2072220E99E2002DDDD5 /* uv_grid.jpg in Resources */,
 				95F246622202349900E7C2E7 /* art.scnassets in Resources */,
 				95F2466C2202349A00E7C2E7 /* LaunchScreen.storyboard in Resources */,
-				95F2467F22023FFB00E7C2E7 /* circle.shader in Resources */,
+				95F2467F22023FFB00E7C2E7 /* circle.fragment.shader in Resources */,
 				95F2467C22023D1200E7C2E7 /* icon_circle.png in Resources */,
 				95F2467722023B3E00E7C2E7 /* Default-568h@2x.png in Resources */,
 				95F246672202349900E7C2E7 /* Main.storyboard in Resources */,

@@ -37,28 +37,28 @@ class ShaderModifierDataSource {
             ShaderModifierEntity(
                 name: "Cube",
                 previewImage: image(named: "icon_circle"),
-                shaderModifier: shaderModifier(named: "circle"),
+                shaderModifier: shaderModifier(named: "circle.fragment"),
                 entryPoint: .fragment,
                 targetMeshType: .cube))
         shaderModifiers.append(
             ShaderModifierEntity(
                 name: "Sphere",
                 previewImage: image(named: "icon_circle"),
-                shaderModifier: shaderModifier(named: "circle"),
+                shaderModifier: shaderModifier(named: "circle.fragment"),
                 entryPoint: .fragment,
                 targetMeshType: .sphere))
         shaderModifiers.append(
             ShaderModifierEntity(
                 name: "Suzanne",
                 previewImage: image(named: "icon_circle"),
-                shaderModifier: shaderModifier(named: "circle"),
+                shaderModifier: shaderModifier(named: "circle.fragment"),
                 entryPoint: .fragment,
                 targetMeshType: .suzanne))
         shaderModifiers.append(
             ShaderModifierEntity(
                 name: "Quad",
                 previewImage: image(named: "icon_circle"),
-                shaderModifier: shaderModifier(named: "circle"),
+                shaderModifier: shaderModifier(named: "circle.fragment"),
                 entryPoint: .fragment,
                 targetMeshType: .quad))
     }
@@ -68,6 +68,6 @@ class ShaderModifierDataSource {
     }
     
     private func shaderModifier(named shaderModifierName: String) -> String {
-        return try! String(contentsOfFile: Bundle.main.path(forResource: "circle", ofType: "shader")!, encoding: String.Encoding.utf8)
+        return try! String(contentsOfFile: Bundle.main.path(forResource: shaderModifierName, ofType: "shader")!, encoding: String.Encoding.utf8)
     }
 }
