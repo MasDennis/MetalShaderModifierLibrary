@@ -12,13 +12,12 @@
 		95F246642202349900E7C2E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F246632202349900E7C2E7 /* GameViewController.swift */; };
 		95F246672202349900E7C2E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F246652202349900E7C2E7 /* Main.storyboard */; };
 		95F2466C2202349A00E7C2E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F2466A2202349A00E7C2E7 /* LaunchScreen.storyboard */; };
-		95F246742202384000E7C2E7 /* ShaderModifierCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F246732202384000E7C2E7 /* ShaderModifierCollectionView.swift */; };
 		95F2467722023B3E00E7C2E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467622023B3E00E7C2E7 /* Default-568h@2x.png */; };
 		95F2467922023BDC00E7C2E7 /* ShaderModifierDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2467822023BDC00E7C2E7 /* ShaderModifierDataSource.swift */; };
 		95F2467C22023D1200E7C2E7 /* icon_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467B22023D1200E7C2E7 /* icon_circle.png */; };
 		95F2467F22023FFB00E7C2E7 /* circle.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467E22023FFB00E7C2E7 /* circle.fragment.shader */; };
-		95F24681220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */; };
 		EF2CA191220D3F7B0076E31F /* ShaderModifierSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */; };
+		EF674E4E2217DBDC000516D2 /* ShaderModifierTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF674E4C2217DBDC000516D2 /* ShaderModifierTableViewController.swift */; };
 		EF6D2072220E99E2002DDDD5 /* uv_grid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */; };
 /* End PBXBuildFile section */
 
@@ -30,14 +29,13 @@
 		95F246662202349900E7C2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95F2466B2202349A00E7C2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95F2466D2202349A00E7C2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95F246732202384000E7C2E7 /* ShaderModifierCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierCollectionView.swift; sourceTree = "<group>"; };
 		95F2467622023B3E00E7C2E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		95F2467822023BDC00E7C2E7 /* ShaderModifierDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierDataSource.swift; sourceTree = "<group>"; };
 		95F2467B22023D1200E7C2E7 /* icon_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_circle.png; sourceTree = "<group>"; };
 		95F2467E22023FFB00E7C2E7 /* circle.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = circle.fragment.shader; sourceTree = "<group>"; };
-		95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF2CA18D220D3B1B0076E31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierSwitcher.swift; sourceTree = "<group>"; };
+		EF674E4C2217DBDC000516D2 /* ShaderModifierTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierTableViewController.swift; sourceTree = "<group>"; };
 		EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uv_grid.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,11 +101,10 @@
 		EF2CA18B220D3AD80076E31F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EF674E4B2217DBB0000516D2 /* View */,
 				95F2465F2202349900E7C2E7 /* AppDelegate.swift */,
 				95F246632202349900E7C2E7 /* GameViewController.swift */,
-				95F246732202384000E7C2E7 /* ShaderModifierCollectionView.swift */,
 				95F2467822023BDC00E7C2E7 /* ShaderModifierDataSource.swift */,
-				95F24680220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift */,
 				EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */,
 			);
 			path = Classes;
@@ -120,6 +117,14 @@
 				95F2466A2202349A00E7C2E7 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		EF674E4B2217DBB0000516D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF674E4C2217DBDC000516D2 /* ShaderModifierTableViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,9 +202,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF674E4E2217DBDC000516D2 /* ShaderModifierTableViewController.swift in Sources */,
 				EF2CA191220D3F7B0076E31F /* ShaderModifierSwitcher.swift in Sources */,
-				95F24681220242E100E7C2E7 /* ShaderModifierCollectionViewCell.swift in Sources */,
-				95F246742202384000E7C2E7 /* ShaderModifierCollectionView.swift in Sources */,
 				95F246642202349900E7C2E7 /* GameViewController.swift in Sources */,
 				95F2467922023BDC00E7C2E7 /* ShaderModifierDataSource.swift in Sources */,
 				95F246602202349900E7C2E7 /* AppDelegate.swift in Sources */,

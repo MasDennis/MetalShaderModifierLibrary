@@ -12,12 +12,13 @@ import SceneKit
 
 class GameViewController: UIViewController {
     @IBOutlet weak var sceneView: SCNView!
-    @IBOutlet weak var shaderCollectionView: ShaderModifierCollectionView!
     
     private var dataSource: ShaderModifierDataSource?
     private var switcher: ShaderModifierSwitcher?
     private var perspectiveCameraNode: SCNNode?
     private var orthographicCameraNode: SCNNode?
+    
+    var selectedShaderModifier: ShaderModifierEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +68,10 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        shaderCollectionView.shaderDataSource = dataSource
-        shaderCollectionView.selectionDelegate = self
         
-        if let shaderModifier = dataSource?.shaderModifiers.first {
+        if let shaderModifier = selectedShaderModifier {
             didSelect(shaderModifier: shaderModifier)
+            selectedShaderModifier = nil
         }
     }
     
@@ -90,9 +90,14 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-}
-
-extension GameViewController: ShaderModifierSelectionDelegate {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "shaderModifierTableSegue",
+            let vc = segue.destination as? ShaderModifierTableViewController {
+            vc.shaderDataSource = dataSource
+        }
+    }
+    
     func didSelect(shaderModifier: ShaderModifierEntity) {
         switcher?.switchTo(shaderModifier: shaderModifier)
         
