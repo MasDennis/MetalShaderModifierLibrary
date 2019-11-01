@@ -17,6 +17,8 @@
 		95F2467C22023D1200E7C2E7 /* icon_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467B22023D1200E7C2E7 /* icon_circle.png */; };
 		95F2467F22023FFB00E7C2E7 /* circle.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = 95F2467E22023FFB00E7C2E7 /* circle.fragment.shader */; };
 		EF2CA191220D3F7B0076E31F /* ShaderModifierSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */; };
+		EF399E7F236CDFB00033E7FB /* multi_circle.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = EF399E7E236CDFB00033E7FB /* multi_circle.fragment.shader */; };
+		EF399E81236CE46B0033E7FB /* zoom.geometry.shader in Resources */ = {isa = PBXBuildFile; fileRef = EF399E80236CE46B0033E7FB /* zoom.geometry.shader */; };
 		EF674E4E2217DBDC000516D2 /* ShaderModifierTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF674E4C2217DBDC000516D2 /* ShaderModifierTableViewController.swift */; };
 		EF6D2072220E99E2002DDDD5 /* uv_grid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,8 @@
 		95F2467E22023FFB00E7C2E7 /* circle.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = circle.fragment.shader; sourceTree = "<group>"; };
 		EF2CA18D220D3B1B0076E31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2CA190220D3F7B0076E31F /* ShaderModifierSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierSwitcher.swift; sourceTree = "<group>"; };
+		EF399E7E236CDFB00033E7FB /* multi_circle.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = multi_circle.fragment.shader; sourceTree = "<group>"; };
+		EF399E80236CE46B0033E7FB /* zoom.geometry.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = zoom.geometry.shader; sourceTree = "<group>"; };
 		EF674E4C2217DBDC000516D2 /* ShaderModifierTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierTableViewController.swift; sourceTree = "<group>"; };
 		EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uv_grid.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				95F2467E22023FFB00E7C2E7 /* circle.fragment.shader */,
+				EF399E7E236CDFB00033E7FB /* multi_circle.fragment.shader */,
+				EF399E80236CE46B0033E7FB /* zoom.geometry.shader */,
 			);
 			path = "Shader Modifiers";
 			sourceTree = "<group>";
@@ -188,10 +194,12 @@
 				EF6D2072220E99E2002DDDD5 /* uv_grid.jpg in Resources */,
 				95F246622202349900E7C2E7 /* art.scnassets in Resources */,
 				95F2466C2202349A00E7C2E7 /* LaunchScreen.storyboard in Resources */,
+				EF399E81236CE46B0033E7FB /* zoom.geometry.shader in Resources */,
 				95F2467F22023FFB00E7C2E7 /* circle.fragment.shader in Resources */,
 				95F2467C22023D1200E7C2E7 /* icon_circle.png in Resources */,
 				95F2467722023B3E00E7C2E7 /* Default-568h@2x.png in Resources */,
 				95F246672202349900E7C2E7 /* Main.storyboard in Resources */,
+				EF399E7F236CDFB00033E7FB /* multi_circle.fragment.shader in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

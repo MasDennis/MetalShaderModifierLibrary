@@ -19,8 +19,8 @@ class ShaderModifierSwitcher {
     }
     
     func switchTo(shaderModifier: ShaderModifierEntity) {
-        createScene(for: shaderModifier)
         self.currentShaderModifier = shaderModifier
+        createScene(for: shaderModifier)
     }
     
     private func createScene(for shaderModifier: ShaderModifierEntity) {
@@ -53,21 +53,21 @@ class ShaderModifierSwitcher {
     }
     
     private func createQuadScene() {
-        if let currentNode = currentNode {
-            currentNode.removeFromParentNode()
-        }
-        
-        let node = SCNNode()
-        let material = SCNMaterial()
+        currentNode?.removeFromParentNode()
 
-        material.diffuse.contents = UIImage(named: "uv_grid.jpg", in: Bundle.main, compatibleWith: nil)
+        let geometry = SCNPlane(width: 1, height: 1)
+        geometry.widthSegmentCount = 100
+        geometry.heightSegmentCount = 100
+        let node = SCNNode(geometry: geometry)
+        let material = SCNMaterial()
+        material.lightingModel = .constant
         
         if let shaderModifier = currentShaderModifier {
             material.shaderModifiers = [ shaderModifier.entryPoint: shaderModifier.shaderModifier ]
         }
-        
-        node.geometry = SCNPlane(width: 1, height: 1)
-        node.geometry?.firstMaterial = material
+
+        material.diffuse.contents = UIColor.blue
+        node.geometry?.materials = [ material ]
         sceneView?.scene?.rootNode.addChildNode(node)
         currentNode = node
         
@@ -83,5 +83,11 @@ class ShaderModifierSwitcher {
         scale.z = 1
         
         node.scale = scale
+        
+        if let imageName = currentShaderModifier?.backgroundImageName {
+            material.diffuse.contents = UIImage(named: imageName)
+        }
+        
+        material.setValue(CGPoint(x: CGFloat(scale.x), y: CGFloat(scale.y)), forKeyPath: "quadScale")
     }
 }

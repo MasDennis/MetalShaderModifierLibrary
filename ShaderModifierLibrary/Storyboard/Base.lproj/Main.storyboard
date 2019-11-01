@@ -1,71 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LvU-eh-xBq">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
-        <scene sceneID="tXr-a1-R10">
-            <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="ShaderModifierLibrary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ErW-xc-BZm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1H6-Up-Faz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </sceneKitView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVC-kz-bVx">
-                                <rect key="frame" x="164" y="583" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BFZ-1b-3kt" kind="showDetail" identifier="shaderModifierTableSegue" id="WQc-v5-OCh"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.28618706599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="1H6-Up-Faz" firstAttribute="width" secondItem="ErW-xc-BZm" secondAttribute="width" id="32J-im-PGx"/>
-                            <constraint firstAttribute="top" secondItem="1H6-Up-Faz" secondAttribute="top" id="Uqj-7W-UXL"/>
-                            <constraint firstItem="1H6-Up-Faz" firstAttribute="leading" secondItem="ZY4-hq-Pb4" secondAttribute="leading" id="ZBM-Ye-TgO"/>
-                            <constraint firstItem="1H6-Up-Faz" firstAttribute="height" secondItem="ErW-xc-BZm" secondAttribute="height" id="oiF-yy-bsZ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZY4-hq-Pb4"/>
-                    </view>
-                    <connections>
-                        <outlet property="sceneView" destination="1H6-Up-Faz" id="aW6-zE-VID"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
-        </scene>
         <!--Shader Modifier Table View Controller-->
         <scene sceneID="g73-sk-bw3">
             <objects>
                 <tableViewController id="BFZ-1b-3kt" customClass="ShaderModifierTableViewController" customModule="ShaderModifierLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vHb-KW-OpW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shaderModifierCell" id="k7V-B8-85e">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k7V-B8-85e" id="L1b-iI-BaT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" identifier="gameViewControllerSegue" id="kyD-Tg-Y88"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -73,10 +31,53 @@
                             <outlet property="delegate" destination="BFZ-1b-3kt" id="wmE-u7-RRI"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="6i6-aV-7OO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muN-pE-DcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="137"/>
+            <point key="canvasLocation" x="658" y="-18"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="KWm-5A-wHf">
+            <objects>
+                <viewController id="LvU-eh-xBq" customClass="GameViewController" customModule="ShaderModifierLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="die-Sj-mmc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1H6-Up-Faz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGm-N1-ca1">
+                                <rect key="frame" x="117" y="617" width="140" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Shader Modifiers"/>
+                                <connections>
+                                    <segue destination="BFZ-1b-3kt" kind="popoverPresentation" identifier="shaderModifierTableSegue" popoverAnchorView="LGm-N1-ca1" id="lu7-xZ-hJz">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Qnl-hl-OkY" firstAttribute="bottom" secondItem="1H6-Up-Faz" secondAttribute="bottom" id="FG8-dx-hOh"/>
+                            <constraint firstItem="Qnl-hl-OkY" firstAttribute="bottom" secondItem="LGm-N1-ca1" secondAttribute="bottom" constant="20" id="Jmh-0s-ip7"/>
+                            <constraint firstItem="LGm-N1-ca1" firstAttribute="centerX" secondItem="Qnl-hl-OkY" secondAttribute="centerX" id="R2R-GT-dg0"/>
+                            <constraint firstItem="1H6-Up-Faz" firstAttribute="leading" secondItem="Qnl-hl-OkY" secondAttribute="leading" id="aiG-eC-h84"/>
+                            <constraint firstItem="1H6-Up-Faz" firstAttribute="top" secondItem="Qnl-hl-OkY" secondAttribute="top" id="oQQ-Bt-QW7"/>
+                            <constraint firstItem="Qnl-hl-OkY" firstAttribute="trailing" secondItem="1H6-Up-Faz" secondAttribute="trailing" id="qgL-tV-gB5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qnl-hl-OkY"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="1H6-Up-Faz" id="6R7-ct-FQj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcH-gf-nPD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1030" y="95"/>
         </scene>
     </scenes>
 </document>

@@ -64,6 +64,10 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(ambientLightNode)
         
         switcher = ShaderModifierSwitcher(with: sceneView)
+        
+        if let firstShader = dataSource?.shaderModifiers.first {
+            didSelect(shaderModifier: firstShader)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,9 +99,12 @@ class GameViewController: UIViewController {
         if segue.identifier == "shaderModifierTableSegue",
             let vc = segue.destination as? ShaderModifierTableViewController {
             vc.shaderDataSource = dataSource
+            vc.shaderModifierSelectionDelegate = self
         }
     }
-    
+}
+
+extension GameViewController: ShaderModifierSelectionDelegate {
     func didSelect(shaderModifier: ShaderModifierEntity) {
         switcher?.switchTo(shaderModifier: shaderModifier)
         

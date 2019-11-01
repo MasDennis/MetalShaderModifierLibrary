@@ -16,6 +16,7 @@ class ShaderModifierTableViewController: UITableViewController {
             reloadInputViews()
         }
     }
+    var shaderModifierSelectionDelegate: ShaderModifierSelectionDelegate?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,10 @@ class ShaderModifierTableViewController: UITableViewController {
         selectedShaderModifier = shaderDataSource?.shaderModifiers[indexPath.row]
         
         DispatchQueue.main.async { [weak self] in
-            self?.performSegue(withIdentifier: "gameViewControllerSegue", sender: nil)
+            self?.dismiss(animated: true) {
+                guard let modifier = self?.selectedShaderModifier else { return }
+                self?.shaderModifierSelectionDelegate?.didSelect(shaderModifier: modifier)
+            }
         }
     }
     
@@ -66,4 +70,8 @@ class ShaderModifierTableViewController: UITableViewController {
         }
         return false
     }
+}
+
+protocol ShaderModifierSelectionDelegate {
+    func didSelect(shaderModifier: ShaderModifierEntity)
 }
