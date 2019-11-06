@@ -16,49 +16,65 @@ enum TargetMeshType {
     case suzanne
 }
 
-struct ShaderModifierEntity {
+struct ShaderModifiersEntity {
     var name: String
-    var shaderModifier: String
-    var entryPoint: SCNShaderModifierEntryPoint
+    var shaderModifiers: [SCNShaderModifierEntryPoint: String]
     var targetMeshType: TargetMeshType
     var backgroundImageName: String?
 }
 
 class ShaderModifierDataSource {
-    public var shaderModifiers: [ShaderModifierEntity]
+    public var shaderModifiers: [ShaderModifiersEntity]
     
     init() {
-        shaderModifiers = [ShaderModifierEntity]()
+        shaderModifiers = [ShaderModifiersEntity]()
         populateArray()
     }
     
     private func populateArray() {
         shaderModifiers.append(
-            ShaderModifierEntity(
+            ShaderModifiersEntity(
                 name: "Circle",
-                shaderModifier: shaderModifier(named: "circle.fragment"),
-                entryPoint: .fragment,
+                shaderModifiers: [SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "circle.fragment")],
                 targetMeshType: .quad))
         shaderModifiers.append(
-            ShaderModifierEntity(
+            ShaderModifiersEntity(
                 name: "Multiple circles",
-                shaderModifier: shaderModifier(named: "multi_circle.fragment"),
-                entryPoint: .fragment,
+                shaderModifiers: [SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "multi_circle.fragment")],
                 targetMeshType: .quad))
         shaderModifiers.append(
-            ShaderModifierEntity(
+            ShaderModifiersEntity(
                 name: "Zoom",
-                shaderModifier: shaderModifier(named: "zoom.geometry"),
-                entryPoint: .geometry,
+                shaderModifiers: [SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "zoom.geometry")],
                 targetMeshType: .quad,
                 backgroundImageName: "uv_grid.jpg"))
-//        shaderModifiers.append(
-//            ShaderModifierEntity(
-//                name: "Suzanne",
-//                previewImage: image(named: "icon_circle"),
-//                shaderModifier: shaderModifier(named: "circle.fragment"),
-//                entryPoint: .fragment,
-//                targetMeshType: .suzanne))
+        shaderModifiers.append(
+            ShaderModifiersEntity(
+                name: "Visualize Normals",
+                shaderModifiers: [SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "normals_visualized.fragment")],
+                targetMeshType: .suzanne))
+        shaderModifiers.append(
+            ShaderModifiersEntity(
+                name: "Extrude Along Normal",
+                shaderModifiers: [SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "extrude_along_normal.geometry")],
+                targetMeshType: .suzanne))
+        shaderModifiers.append(
+            ShaderModifiersEntity(
+                name: "Horizontal Stripes",
+                shaderModifiers: [
+                    SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "horizontal_stripes.fragment"),
+                    SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "horizontal_stripes.geometry"),
+                ],
+                targetMeshType: .suzanne))
+        shaderModifiers.append(
+            ShaderModifiersEntity(
+                name: "Raymarched Sphere",
+                shaderModifiers: [
+                    SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "raymarching_sphere.fragment"),
+                    SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "raymarching_sphere.geometry")
+                ],
+                targetMeshType: .cube))
+
     }
     
     private func image(named imageName: String) -> UIImage {

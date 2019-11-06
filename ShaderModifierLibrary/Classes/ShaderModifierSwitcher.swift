@@ -11,19 +11,25 @@ import SceneKit
 
 class ShaderModifierSwitcher {
     private weak var sceneView: SCNView?
-    private var currentShaderModifier: ShaderModifierEntity?
+    private var currentShaderModifier: ShaderModifiersEntity?
     private var currentNode: SCNNode?
     
     init(with sceneView: SCNView) {
         self.sceneView = sceneView
     }
     
-    func switchTo(shaderModifier: ShaderModifierEntity) {
+    func switchTo(shaderModifier: ShaderModifiersEntity) {
         self.currentShaderModifier = shaderModifier
         createScene(for: shaderModifier)
     }
     
-    private func createScene(for shaderModifier: ShaderModifierEntity) {
+    func willRender() {
+        if let cameraNode = sceneView?.pointOfView {
+            currentNode?.geometry?.firstMaterial?.setValue(cameraNode.worldPosition, forKeyPath: "cameraPosition")
+        }
+    }
+    
+    private func createScene(for shaderModifier: ShaderModifiersEntity) {
         switch shaderModifier.targetMeshType {
         case .cube:
             load(sceneNamed: "Cube Scene")
@@ -33,6 +39,18 @@ class ShaderModifierSwitcher {
             load(sceneNamed: "Sphere Scene")
         case .suzanne:
             load(sceneNamed: "Suzanne Scene")
+        }
+        
+        guard let rootNode = sceneView?.scene?.rootNode.childNode(withName: "rootNode", recursively: true),
+            let material = rootNode.geometry?.firstMaterial
+            else { return }
+        
+        if let shaderModifiers = currentShaderModifier?.shaderModifiers {
+            material.shaderModifiers = shaderModifiers
+        }
+        
+        if let imageName = currentShaderModifier?.backgroundImageName {
+            material.diffuse.contents = UIImage(named: imageName)
         }
     }
         
@@ -45,11 +63,13 @@ class ShaderModifierSwitcher {
         
         node.load()
         
+        guard let rootNode = node.childNode(withName: "rootNode", recursively: true) else { return }
+        
         if let currentNode = currentNode {
             currentNode.removeFromParentNode()
         }
-        sceneView.scene?.rootNode.addChildNode(node)
-        currentNode = node
+        sceneView.scene?.rootNode.addChildNode(rootNode)
+        currentNode = rootNode
     }
     
     private func createQuadScene() {
@@ -59,13 +79,10 @@ class ShaderModifierSwitcher {
         geometry.widthSegmentCount = 100
         geometry.heightSegmentCount = 100
         let node = SCNNode(geometry: geometry)
+        node.name = "rootNode"
         let material = SCNMaterial()
         material.lightingModel = .constant
         
-        if let shaderModifier = currentShaderModifier {
-            material.shaderModifiers = [ shaderModifier.entryPoint: shaderModifier.shaderModifier ]
-        }
-
         material.diffuse.contents = UIColor.blue
         node.geometry?.materials = [ material ]
         sceneView?.scene?.rootNode.addChildNode(node)
@@ -83,10 +100,6 @@ class ShaderModifierSwitcher {
         scale.z = 1
         
         node.scale = scale
-        
-        if let imageName = currentShaderModifier?.backgroundImageName {
-            material.diffuse.contents = UIImage(named: imageName)
-        }
         
         material.setValue(CGPoint(x: CGFloat(scale.x), y: CGFloat(scale.y)), forKeyPath: "quadScale")
     }

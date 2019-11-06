@@ -9,7 +9,7 @@
 import UIKit
 
 class ShaderModifierTableViewController: UITableViewController {
-    private var selectedShaderModifier: ShaderModifierEntity?
+    private var selectedShaderModifier: ShaderModifiersEntity?
     
     var shaderDataSource: ShaderModifierDataSource? {
         didSet {
@@ -73,5 +73,5 @@ class ShaderModifierTableViewController: UITableViewController {
 }
 
 protocol ShaderModifierSelectionDelegate {
-    func didSelect(shaderModifier: ShaderModifierEntity)
+    func didSelect(shaderModifier: ShaderModifiersEntity)
 }

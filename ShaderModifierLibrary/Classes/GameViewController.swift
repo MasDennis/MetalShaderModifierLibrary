@@ -12,13 +12,14 @@ import SceneKit
 
 class GameViewController: UIViewController {
     @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     private var dataSource: ShaderModifierDataSource?
     private var switcher: ShaderModifierSwitcher?
     private var perspectiveCameraNode: SCNNode?
     private var orthographicCameraNode: SCNNode?
     
-    var selectedShaderModifier: ShaderModifierEntity?
+    var selectedShaderModifier: ShaderModifiersEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,8 +105,14 @@ class GameViewController: UIViewController {
     }
 }
 
+extension GameViewController: SCNSceneRendererDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
+        switcher?.willRender()
+    }
+}
+
 extension GameViewController: ShaderModifierSelectionDelegate {
-    func didSelect(shaderModifier: ShaderModifierEntity) {
+    func didSelect(shaderModifier: ShaderModifiersEntity) {
         switcher?.switchTo(shaderModifier: shaderModifier)
         
         switch shaderModifier.targetMeshType {
@@ -115,6 +122,10 @@ extension GameViewController: ShaderModifierSelectionDelegate {
         default:
             sceneView.pointOfView = perspectiveCameraNode
             sceneView.allowsCameraControl = true
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.titleLabel.text = shaderModifier.name
         }
     }
 }
