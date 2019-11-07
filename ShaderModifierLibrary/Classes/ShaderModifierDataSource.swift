@@ -34,6 +34,22 @@ class ShaderModifierDataSource {
     private func populateArray() {
         shaderModifiers.append(
             ShaderModifiersEntity(
+                       name: "Raymarched Shaded Torus",
+                       shaderModifiers: [
+                           SCNShaderModifierEntryPoint.lightingModel: shaderModifier(named: "raymarching_torus_shading.lightingModel"),
+                           SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "raymarching_torus.geometry")
+                       ],
+                       targetMeshType: .cube))
+        shaderModifiers.append(
+            ShaderModifiersEntity(
+                name: "Raymarched Torus",
+                shaderModifiers: [
+                    SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "raymarching_torus.fragment"),
+                    SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "raymarching_torus.geometry")
+                ],
+                targetMeshType: .cube))
+        shaderModifiers.append(
+            ShaderModifiersEntity(
                 name: "Circle",
                 shaderModifiers: [SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "circle.fragment")],
                 targetMeshType: .quad))
@@ -66,14 +82,7 @@ class ShaderModifierDataSource {
                     SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "horizontal_stripes.geometry"),
                 ],
                 targetMeshType: .suzanne))
-        shaderModifiers.append(
-            ShaderModifiersEntity(
-                name: "Raymarched Sphere",
-                shaderModifiers: [
-                    SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "raymarching_sphere.fragment"),
-                    SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "raymarching_sphere.geometry")
-                ],
-                targetMeshType: .cube))
+        
 
     }
     
