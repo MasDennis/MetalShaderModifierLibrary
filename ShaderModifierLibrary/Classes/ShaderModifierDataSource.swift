@@ -20,7 +20,9 @@ struct ShaderModifiersEntity {
     var name: String
     var shaderModifiers: [SCNShaderModifierEntryPoint: String]
     var targetMeshType: TargetMeshType
+    
     var backgroundImageName: String?
+    var textures: [String: String]?
 }
 
 class ShaderModifierDataSource {
@@ -34,12 +36,21 @@ class ShaderModifierDataSource {
     private func populateArray() {
         shaderModifiers.append(
             ShaderModifiersEntity(
-                       name: "Raymarched Shaded Torus",
-                       shaderModifiers: [
-                           SCNShaderModifierEntryPoint.lightingModel: shaderModifier(named: "raymarching_torus_shading.lightingModel"),
-                           SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "raymarching_torus.geometry")
-                       ],
-                       targetMeshType: .cube))
+               name: "Texture Arguments",
+               shaderModifiers: [
+                   SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "texture_arguments.fragment")
+               ],
+               targetMeshType: .cube,
+               textures: ["texture1": "uv_grid.jpg", "texture2": "ChristmasTreeOrnament02_col.jpg"]
+               ))
+        shaderModifiers.append(
+            ShaderModifiersEntity(
+               name: "Raymarched Shaded Torus",
+               shaderModifiers: [
+                   SCNShaderModifierEntryPoint.lightingModel: shaderModifier(named: "raymarching_torus_shading.lightingModel"),
+                   SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "raymarching_torus.geometry")
+               ],
+               targetMeshType: .cube))
         shaderModifiers.append(
             ShaderModifiersEntity(
                 name: "Raymarched Torus",

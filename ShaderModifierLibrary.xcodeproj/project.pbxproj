@@ -24,6 +24,8 @@
 		EF399E81236CE46B0033E7FB /* zoom.geometry.shader in Resources */ = {isa = PBXBuildFile; fileRef = EF399E80236CE46B0033E7FB /* zoom.geometry.shader */; };
 		EF3E8E5B2374A75500B36E88 /* raymarching_torus_shading.lightingModel.shader in Resources */ = {isa = PBXBuildFile; fileRef = EF3E8E5A2374A75500B36E88 /* raymarching_torus_shading.lightingModel.shader */; };
 		EF674E4E2217DBDC000516D2 /* ShaderModifierTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF674E4C2217DBDC000516D2 /* ShaderModifierTableViewController.swift */; };
+		EF6BB6552375315100A2780D /* texture_arguments.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = EF6BB6542375315100A2780D /* texture_arguments.fragment.shader */; };
+		EF6BB6572375398000A2780D /* ChristmasTreeOrnament02_col.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF6BB6562375398000A2780D /* ChristmasTreeOrnament02_col.jpg */; };
 		EF6D2072220E99E2002DDDD5 /* uv_grid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */; };
 		EFF920CA237370CA008FE8FE /* horizontal_stripes.geometry.shader in Resources */ = {isa = PBXBuildFile; fileRef = EFF920C9237370CA008FE8FE /* horizontal_stripes.geometry.shader */; };
 		EFF920CC237370DF008FE8FE /* horizontal_stripes.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = EFF920CB237370DF008FE8FE /* horizontal_stripes.fragment.shader */; };
@@ -52,6 +54,8 @@
 		EF399E80236CE46B0033E7FB /* zoom.geometry.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = zoom.geometry.shader; sourceTree = "<group>"; };
 		EF3E8E5A2374A75500B36E88 /* raymarching_torus_shading.lightingModel.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = raymarching_torus_shading.lightingModel.shader; sourceTree = "<group>"; };
 		EF674E4C2217DBDC000516D2 /* ShaderModifierTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderModifierTableViewController.swift; sourceTree = "<group>"; };
+		EF6BB6542375315100A2780D /* texture_arguments.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = texture_arguments.fragment.shader; sourceTree = "<group>"; };
+		EF6BB6562375398000A2780D /* ChristmasTreeOrnament02_col.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ChristmasTreeOrnament02_col.jpg; sourceTree = "<group>"; };
 		EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uv_grid.jpg; sourceTree = "<group>"; };
 		EFF920C9237370CA008FE8FE /* horizontal_stripes.geometry.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = horizontal_stripes.geometry.shader; sourceTree = "<group>"; };
 		EFF920CB237370DF008FE8FE /* horizontal_stripes.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = horizontal_stripes.fragment.shader; sourceTree = "<group>"; };
@@ -90,7 +94,6 @@
 		95F2465E2202349900E7C2E7 /* ShaderModifierLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */,
 				EF2CA18D220D3B1B0076E31F /* Assets.xcassets */,
 				95F246612202349900E7C2E7 /* art.scnassets */,
 				EF2CA18B220D3AD80076E31F /* Classes */,
@@ -105,6 +108,8 @@
 		95F2467A22023D0500E7C2E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF6BB6562375398000A2780D /* ChristmasTreeOrnament02_col.jpg */,
+				EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */,
 				95F2467B22023D1200E7C2E7 /* icon_circle.png */,
 			);
 			path = Resources;
@@ -124,6 +129,7 @@
 				EFF920CD23738338008FE8FE /* raymarching_torus.fragment.shader */,
 				EFF920CF23738459008FE8FE /* raymarching_torus.geometry.shader */,
 				EF3E8E5A2374A75500B36E88 /* raymarching_torus_shading.lightingModel.shader */,
+				EF6BB6542375315100A2780D /* texture_arguments.fragment.shader */,
 			);
 			path = "Shader Modifiers";
 			sourceTree = "<group>";
@@ -224,10 +230,12 @@
 				EFF920CC237370DF008FE8FE /* horizontal_stripes.fragment.shader in Resources */,
 				EF04937A23733F3B00FEA65E /* extrude_along_normal.geometry.shader in Resources */,
 				EF399E81236CE46B0033E7FB /* zoom.geometry.shader in Resources */,
+				EF6BB6552375315100A2780D /* texture_arguments.fragment.shader in Resources */,
 				EF04937C23734D2D00FEA65E /* brick_mortar.fragment.shader in Resources */,
 				EFF920CA237370CA008FE8FE /* horizontal_stripes.geometry.shader in Resources */,
 				95F2467F22023FFB00E7C2E7 /* circle.fragment.shader in Resources */,
 				95F2467C22023D1200E7C2E7 /* icon_circle.png in Resources */,
+				EF6BB6572375398000A2780D /* ChristmasTreeOrnament02_col.jpg in Resources */,
 				EFF920D023738459008FE8FE /* raymarching_torus.geometry.shader in Resources */,
 				95F2467722023B3E00E7C2E7 /* Default-568h@2x.png in Resources */,
 				95F246672202349900E7C2E7 /* Main.storyboard in Resources */,

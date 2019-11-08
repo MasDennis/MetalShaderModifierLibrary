@@ -52,6 +52,12 @@ class ShaderModifierSwitcher {
         if let imageName = currentShaderModifier?.backgroundImageName {
             material.diffuse.contents = UIImage(named: imageName)
         }
+        
+        shaderModifier.textures?.forEach({ (samplerName, textureName) in
+            if let image = UIImage(named: textureName) {
+                material.setValue(SCNMaterialProperty(contents: image), forKey: samplerName)
+            }
+        })
     }
         
     private func load(sceneNamed name: String) {
@@ -70,6 +76,7 @@ class ShaderModifierSwitcher {
         }
         sceneView.scene?.rootNode.addChildNode(rootNode)
         currentNode = rootNode
+        
     }
     
     private func createQuadScene() {
