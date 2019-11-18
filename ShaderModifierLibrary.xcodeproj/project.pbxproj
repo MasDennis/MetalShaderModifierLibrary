@@ -27,6 +27,7 @@
 		EF6BB6552375315100A2780D /* texture_arguments.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = EF6BB6542375315100A2780D /* texture_arguments.fragment.shader */; };
 		EF6BB6572375398000A2780D /* ChristmasTreeOrnament02_col.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF6BB6562375398000A2780D /* ChristmasTreeOrnament02_col.jpg */; };
 		EF6D2072220E99E2002DDDD5 /* uv_grid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */; };
+		EFCD076E2382904C00057E6E /* speedometer.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = EFCD076D2382904C00057E6E /* speedometer.fragment.shader */; };
 		EFF920CA237370CA008FE8FE /* horizontal_stripes.geometry.shader in Resources */ = {isa = PBXBuildFile; fileRef = EFF920C9237370CA008FE8FE /* horizontal_stripes.geometry.shader */; };
 		EFF920CC237370DF008FE8FE /* horizontal_stripes.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = EFF920CB237370DF008FE8FE /* horizontal_stripes.fragment.shader */; };
 		EFF920CE23738338008FE8FE /* raymarching_torus.fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = EFF920CD23738338008FE8FE /* raymarching_torus.fragment.shader */; };
@@ -57,6 +58,7 @@
 		EF6BB6542375315100A2780D /* texture_arguments.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = texture_arguments.fragment.shader; sourceTree = "<group>"; };
 		EF6BB6562375398000A2780D /* ChristmasTreeOrnament02_col.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ChristmasTreeOrnament02_col.jpg; sourceTree = "<group>"; };
 		EF6D2071220E99E2002DDDD5 /* uv_grid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uv_grid.jpg; sourceTree = "<group>"; };
+		EFCD076D2382904C00057E6E /* speedometer.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = speedometer.fragment.shader; sourceTree = "<group>"; };
 		EFF920C9237370CA008FE8FE /* horizontal_stripes.geometry.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = horizontal_stripes.geometry.shader; sourceTree = "<group>"; };
 		EFF920CB237370DF008FE8FE /* horizontal_stripes.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = horizontal_stripes.fragment.shader; sourceTree = "<group>"; };
 		EFF920CD23738338008FE8FE /* raymarching_torus.fragment.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = raymarching_torus.fragment.shader; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				EFF920CF23738459008FE8FE /* raymarching_torus.geometry.shader */,
 				EF3E8E5A2374A75500B36E88 /* raymarching_torus_shading.lightingModel.shader */,
 				EF6BB6542375315100A2780D /* texture_arguments.fragment.shader */,
+				EFCD076D2382904C00057E6E /* speedometer.fragment.shader */,
 			);
 			path = "Shader Modifiers";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				EF04937A23733F3B00FEA65E /* extrude_along_normal.geometry.shader in Resources */,
 				EF399E81236CE46B0033E7FB /* zoom.geometry.shader in Resources */,
 				EF6BB6552375315100A2780D /* texture_arguments.fragment.shader in Resources */,
+				EFCD076E2382904C00057E6E /* speedometer.fragment.shader in Resources */,
 				EF04937C23734D2D00FEA65E /* brick_mortar.fragment.shader in Resources */,
 				EFF920CA237370CA008FE8FE /* horizontal_stripes.geometry.shader in Resources */,
 				95F2467F22023FFB00E7C2E7 /* circle.fragment.shader in Resources */,

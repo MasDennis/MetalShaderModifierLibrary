@@ -93,8 +93,13 @@ class ShaderModifierDataSource {
                     SCNShaderModifierEntryPoint.geometry: shaderModifier(named: "horizontal_stripes.geometry"),
                 ],
                 targetMeshType: .suzanne))
-        
-
+        shaderModifiers.append(
+            ShaderModifiersEntity(
+                name: "Speedometer",
+                shaderModifiers: [
+                    SCNShaderModifierEntryPoint.fragment: shaderModifier(named: "speedometer.fragment")
+                ],
+                targetMeshType: .quad))
     }
     
     private func image(named imageName: String) -> UIImage {

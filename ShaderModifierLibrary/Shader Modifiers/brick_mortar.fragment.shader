@@ -1,8 +1,3 @@
-
-float mod(float x, float y) {
-    return x - y * floor(x/y);
-}
-
 #pragma arguments
 
 float2 quadScale;
@@ -17,8 +12,8 @@ float ratio = quadScale.y / quadScale.x;
 float2 uv = _surface.diffuseTexcoord;
 uv.y *= ratio;
 
-float x = mod(uv.x, brickSize.x + mortarSize);
-float y = mod(uv.y, brickSize.y + mortarSize);
+float x = fmod(uv.x, brickSize.x + mortarSize);
+float y = fmod(uv.y, brickSize.y + mortarSize);
 float2 brick = float2(step(x, brickSize.x), step(y, brickSize.y));
 
 _output.color = mix(mortarColor, brickColor, brick.x * brick.y);

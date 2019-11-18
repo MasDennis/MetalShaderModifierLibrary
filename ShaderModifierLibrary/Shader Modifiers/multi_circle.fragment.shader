@@ -5,10 +5,6 @@ float circle(float2 uv, float radius, float2 center, float edgeSmoothing) {
                             dist);
 }
 
-float mod(float x, float y) {
-    return x - y * floor(x/y);
-}
-
 #pragma arguments
 
 float2 quadScale;
@@ -21,8 +17,8 @@ uv.y *= ratio;
 
 float numRepeats = 10.0;
 
-uv.x = mod(uv.x * numRepeats, 1.0);
-uv.y = mod(uv.y * numRepeats, 1.0);
+uv.x = fmod(uv.x * numRepeats, 1.0);
+uv.y = fmod(uv.y * numRepeats, 1.0);
 
 float2 center = float2(0.5, 0.5);
 
